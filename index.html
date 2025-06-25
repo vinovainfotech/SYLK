@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SYLK Solutions - Engineering & Technology Services</title>
@@ -531,10 +532,12 @@
                 padding: 20px;
             }
         }
+
     </style>
 </head>
 <body>
     <header>
+      l
         <div class="container">
             <a href="#" class="logo"><b>SYLK SOLUTIONS</b></a>
             <div class="mobile-nav-toggle">&#9776;</div> <!-- Hamburger menu icon -->
@@ -569,30 +572,30 @@
         </section>
 
         <section id="expertise" class="py-16 text-center">
-            <div class="container">
+            <div class="container"  >
                 <h2>Our Core Expertise</h2>
                 <div class="expertise-grid">
-                    <div class="expertise-item">
+                    <div class="expertise-item" data-aos="fade-down">
                         <h3>Product Design Support</h3>
                         <p>Leveraging CAD CAM CAE tools for comprehensive design and development.</p>
                     </div>
-                    <div class="expertise-item">
+                    <div class="expertise-item" data-aos="fade-down">
                         <h3>Engineering Documents & Maintenance</h3>
                         <p>Detail Design, Engineering Change Management, Technical Publication, Data Migration, E-Manuals.</p>
                     </div>
-                    <div class="expertise-item">
+                    <div class="expertise-item" data-aos="fade-down">
                         <h3>Design Validation (CAE/CFD)</h3>
                         <p>Finite Element Modeling, Structural Analysis, Computational Fluid Dynamics, Dynamic & Thermal Analysis, Multi Body Dynamics Analysis, Mold Flow Analysis.</p>
                     </div>
-                    <div class="expertise-item">
+                    <div class="expertise-item" data-aos="fade-up">
                         <h3>Engineering Resource Management</h3>
                         <p>Providing professional resources, coordination, and reporting to multinational companies.</p>
                     </div>
-                    <div class="expertise-item">
+                    <div class="expertise-item" data-aos="fade-up">
                         <h3>CAD Training</h3>
                         <p>Empowering teams with essential CAD software skills.</p>
                     </div>
-                    <div class="expertise-item">
+                    <div class="expertise-item" data-aos="fade-up">
                         <h3>Project Management</h3>
                         <p>Delivering end-to-end project planning, execution, and monitoring solutions to ensure timely delivery, cost efficiency, and quality control for engineering and design projects.</p>
                     </div>
@@ -600,7 +603,7 @@
                 </div>
                 <div class="py-8">
                     <h2>Specialized Expertise In:</h2>
-                    <div class="expertise-grid">
+                    <div class="expertise-grid" data-aos="fade-up-right">
                         <div class="expertise-item">SPM Design</div>
                         <div class="expertise-item">Rapid Prototyping</div>
                         <div class="expertise-item">Industrial Automation and Robotics</div>
@@ -621,7 +624,7 @@
 
                 <div class="services-category">
                     <h3>Design & Development</h3>
-                    <ul class="services-list">
+                    <ul class="services-list" data-aos="fade-up-left">
                         <li>Automobile Industry</li>
                         <li>Off Highway Machinery</li>
                         <li>Electric Switchgear and Power Systems</li>
@@ -632,7 +635,7 @@
 
                 <div class="services-category">
                     <h3>Documents & Maintenance</h3>
-                    <ul class="services-list">
+                    <ul class="services-list"  data-aos="fade-up-right">
                         <li>Detail Design</li>
                         <li>Engineering Change Management</li>
                         <li>Technical Publication</li>
@@ -643,7 +646,7 @@
 
                 <div class="services-category">
                     <h3>Analysis & Optimization</h3>
-                    <ul class="services-list">
+                    <ul class="services-list"  data-aos="fade-up-left">
                         <li>Finite Element Modeling</li>
                         <li>Structural Analysis</li>
                         <li>Computational Fluid Dynamics</li>
@@ -661,7 +664,7 @@
         <section id="resources" class="py-16 text-center">
             <div class="container">
                 <h2>CAD Resources Available For</h2>
-                <ul class="resource-list ">
+                <ul class="resource-list " data-aos="zoom-in-up">
                     <li>CATIA</li>
                     <li>Solidworks</li>
                     <li>Solid Edge</li>
@@ -678,7 +681,7 @@
                 <h2>Contact Us</h2>
                 <p>Reach out to us for world-class engineering and technology solutions.</p>
                 <div class="contact-info">
-                    <div class="branch-info">
+                    <div class="branch-info" data-aos="flip-left"data-aos-duration="4000">
                         <h3>Nashik Branch</h3>
                         <p>Flat No. 3, Moraya Appt., Ambad Link Road,</p>
                         <p>Ambika Nagar, Kamathwada, Nashik - 422 010</p>
@@ -686,7 +689,7 @@
                         <p>Ph: <a href="tel:+918010796352">+91-8010796352</a></p>
                         <p>Email: <a href="mailto:info@sylksolutions.in">info@sylksolutions.in</a></p>
                     </div>
-                    <div class="branch-info">
+                    <div class="branch-info" data-aos="flip-left"data-aos-duration="4000">
                         <h3>Pune Branch</h3>
                         <p>Office No.B-07 Sant Tukaram Maharaj Vyapar Sankul,</p>
                         <p>Near Savali Hotel, Opposite Nigdi Bus Stop.</p>
@@ -766,7 +769,16 @@ document.addEventListener('click', (e) => {
         mainNav.classList.remove('open');
     }
 });
-
+</script>
+//our aos date
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init({
+        offset: 200,
+         duration: 1000,
+    } );
     </script>
+    
+    
 </body>
 </html>
