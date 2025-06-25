@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYLK Solutions - Engineering & Technology Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">    <style>
+        /* Base styles */
+        body {
+  font-family: "Josefin Sans", sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #ecefee; /* Light grey background */
+            color: #333;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Utility classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .py-16 {
+            padding-top: 64px;
+            padding-bottom: 64px;
+        }
+
+        .py-8 {
+            padding-top: 32px;
+            padding-bottom: 32px;
+        }
+
+        /* Header */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #2c3e50; /* Dark blue/grey */
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #a71616; /* Blue */
+        }
+
+        /* New button style for header */
+        .header-button {
+            background-color: #a71616;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-left: 20px; /* Space from navigation */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-decoration: none; /* Make it look like a button but act as a link */
+            white-space: nowrap; /* Prevent button text from wrapping */
+        }
+
+        .header-button:hover {
+            background-color: #f15454; /* Darker blue */
+            transform: translateY(-2px);
+        }
+
+        /* Mobile Navigation Toggle */
+        .mobile-nav-toggle {
+            display: none; /* Hidden by default on desktop */
+            font-size: 2em;
+            cursor: pointer;
+            color: #2c3e50;
+            order: 1; /* Place it before the logo on mobile if needed, or manage with flex-wrap */
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #bebcbb 0%, rgb(243, 240, 240) 100%); /* Blue to dark blue gradient */
+            color: #0e0d0d;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            margin: 0%;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .hero-button {
+            display: inline-block;
+            background-color: #a71616; /* Orange */
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .hero-button:hover {
+            background-color: #f15454; /* Darker orange */
+            transform: translateY(-3px);
+        }
+
+        /* Section Styling */
+        section {
+            background: linear-gradient(135deg, #ede9e7 0%, rgb(243, 240, 240) 100%);
+            margin-top: 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+            
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            color: #a71616 ;
+            margin-bottom: 30px;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #a71616;
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        #about p {
+            font-size: 1.1em;
+            max-width: 900px;
+            margin: 0 auto 20px auto;
+            
+            
+        }
+
+        /* Expertise Section */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+            margin-top: 30px;
+        }
+
+        .expertise-item {
+            background-color: #ecf0f1; /* Light grey/blue */
+            border-radius: 12px;
+             border: 1px solid #e0e6ea;
+            border-left: 5px solid #a71616;;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .expertise-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+             background-color: #fbeaea;
+            border-color: #f68787;
+        
+        }
+
+        .expertise-item h3 {
+            color:  #2c3e50; /* Darker blue/grey */
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+
+        .expertise-item p {
+            color: #777;
+            font-size: 0.95em;
+        }
+
+        /* Services Section */
+        .services-category {
+            margin-bottom: 40px;
+        }
+
+        .services-category h3 {
+            font-size: 1.8em;
+            color: #a71616;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+        }
+
+        .services-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .services-list li {
+            background-color: #f7f9fa;
+            border: 1px solid #e0e6ea;
+            border-left: 5px solid #a71616;
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-size: 1.05em;
+            color: #444;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .services-list li:hover {
+            transform: translateY(-8px);
+            background-color: #fbeaea;
+            border-color: #f68787;
+        }
+
+        /* Resources Section */
+        #resources .resource-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 60px;
+        }
+        
+        
+        
+
+        #resources .resource-list li {
+            background-color: #ecf0f1;
+            border: 1px solid #e0e6ea;
+            border-left: 5px solid #a71616;;
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-weight: 600;
+            color: #34495e;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        #resources .resource-list li:hover {
+            transform: translateY(-8px);
+            background-color: #fbeaea;
+            border-color: #f68787;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            
+        }
+
+        .branch-info {
+            background-color: #ecf0f1;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: left;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            background-color: #eeecec;
+            border-color: #2980b9;
+            color: #090a0a;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .branch-info h3 {
+            color: #2c3e50;
+            font-size: 1.6em;
+            margin-bottom: 15px;
+        }
+
+        .branch-info p {
+            margin: 8px 0;
+            color: #555;
+            font-size: 1.05em;
+        }
+
+        .branch-info a {
+            color: #b92929;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .branch-info a:hover {
+            color: #f15454;
+            text-decoration: underline;
+        }
+          .form-group {
+            margin-bottom: 1.56rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 90%;
+            padding: 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: none;
+        }
+
+        .submit-btn {
+            
+            color: rgb(238, 240, 241);
+            border: none;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-family: 'Poppins', sans-serif;  
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            background-color:  #a71616;
+        }
+
+        .submit-btn:hover {
+            background: #f15454 ;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px #d00808(37, 99, 235, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color:  #a71616; /* Dark blue/grey */
+            color: #ecf0f1;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 0;
+            border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: row; /* Keep logo and toggle on one row */
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .mobile-nav-toggle {
+                display: block; /* Show hamburger menu on mobile */
+            }
+
+            nav {
+                display: none; /* Hide navigation by default on mobile */
+                width: 100%;
+                order: 2; /* Place below logo and toggle */
+                background-color: #ffffff;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                margin-top: 0;
+                padding: 10px 0;
+            }
+
+            nav.open { /* Class added by JS when menu is open */
+                display: block; /* Show navigation when open */
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: stretch; /* Stretch items to fill width */
+            }
+
+            nav ul li {
+                margin: 0; /* Remove horizontal margin */
+                padding: 5px 10px;
+            }
+
+            nav ul li a {
+                display: block; /* Make links behave like block-level buttons */
+                background-color: #f0f0f0; /* Light background for buttons */
+                color: #333;
+                padding: 12px 15px;
+                border-radius: 8px;
+                margin: 5px 0; /* Vertical margin between buttons */
+                text-align: center;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            }
+
+            nav ul li a:hover {
+                background-color: #e0e0e0;
+                color: #3498db;
+            }
+
+            .header-button {
+                display: none; /* Hide the desktop "Get a Quote" button on mobile */
+            }
+
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1.1em;
+            }
+
+            section h2 {
+                font-size: 2em;
+            }
+
+            .expertise-grid, .services-list {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                margin-right: 10%;
+            }
+
+            .branch-info {
+                max-width: 90%;
+                 
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .hero-button {
+                padding: 12px 25px;
+                font-size: 0.9em;
+            }
+
+            section {
+                padding: 25px;
+                margin-top: 0%;
+            }
+
+            section h2 {
+                font-size: 1.8em;
+            }
+
+            .expertise-item {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="#" class="logo"><b>SYLK SOLUTIONS</b></a>
+            <div class="mobile-nav-toggle">&#9776;</div> <!-- Hamburger menu icon -->
+            <nav id="main-nav"> <!-- Added ID for easy JS access -->
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#expertise">Expertise</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="header-button">Get a Quote</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Leading the Future of Engineering & Technology</h1>
+                <p>A Total Design Solution Company building strategic partnerships and empowering businesses through cutting-edge IT and CAD CAM CAE Tools.</p>
+                <a href="#services" class="hero-button">Explore Our Services</a>
+            </div>
+        </section>
+
+        <section id="about" class="py-16 text-center">
+            <div class="container">
+                <h2>About SYLK Solutions</h2>
+                <p>We are a prominent Engineering & Technology Services Company in India, known for providing world-class professional resources, coordination, communication, and reporting. Our centers in Pune & Nashik blend state-of-the-art computing facilities with creative resources, making us a leading Engineering Design & Development Center.</p>
+                <p>Our team comprises a wealth of experience, having served companies from diverse domains including Automobile, Aerospace, Off-Highway, Energy, Manufacturing, Electrical, Outsourcing, and Engineering Firms.</p>
+            </div>
+        </section>
+
+        <section id="expertise" class="py-16 text-center">
+            <div class="container">
+                <h2>Our Core Expertise</h2>
+                <div class="expertise-grid">
+                    <div class="expertise-item">
+                        <h3>Product Design Support</h3>
+                        <p>Leveraging CAD CAM CAE tools for comprehensive design and development.</p>
+                    </div>
+                    <div class="expertise-item">
+                        <h3>Engineering Documents & Maintenance</h3>
+                        <p>Detail Design, Engineering Change Management, Technical Publication, Data Migration, E-Manuals.</p>
+                    </div>
+                    <div class="expertise-item">
+                        <h3>Design Validation (CAE/CFD)</h3>
+                        <p>Finite Element Modeling, Structural Analysis, Computational Fluid Dynamics, Dynamic & Thermal Analysis, Multi Body Dynamics Analysis, Mold Flow Analysis.</p>
+                    </div>
+                    <div class="expertise-item">
+                        <h3>Engineering Resource Management</h3>
+                        <p>Providing professional resources, coordination, and reporting to multinational companies.</p>
+                    </div>
+                    <div class="expertise-item">
+                        <h3>CAD Training</h3>
+                        <p>Empowering teams with essential CAD software skills.</p>
+                    </div>
+                    <div class="expertise-item">
+                        <h3>Project Management</h3>
+                        <p>Delivering end-to-end project planning, execution, and monitoring solutions to ensure timely delivery, cost efficiency, and quality control for engineering and design projects.</p>
+                    </div>
+
+                </div>
+                <div class="py-8">
+                    <h2>Specialized Expertise In:</h2>
+                    <div class="expertise-grid">
+                        <div class="expertise-item">SPM Design</div>
+                        <div class="expertise-item">Rapid Prototyping</div>
+                        <div class="expertise-item">Industrial Automation and Robotics</div>
+                        <div class="expertise-item">Reverse Engineering</div>
+                        <div class="expertise-item">Plastic Engineering</div>
+                        <div class="expertise-item">Analysis and Optimization</div>
+                        <div class="expertise-item">Welding Fixtures</div>
+                        <div class="expertise-item">Jigs and Fixtures</div>
+                        <div class="expertise-item">Press Tool and Moulds</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-16 text-center">
+            <div class="container">
+                <h2>Design Engineering Services</h2>
+
+                <div class="services-category">
+                    <h3>Design & Development</h3>
+                    <ul class="services-list">
+                        <li>Automobile Industry</li>
+                        <li>Off Highway Machinery</li>
+                        <li>Electric Switchgear and Power Systems</li>
+                        <li>Industrial Equipment</li>
+                       
+                    </ul>
+                </div>
+
+                <div class="services-category">
+                    <h3>Documents & Maintenance</h3>
+                    <ul class="services-list">
+                        <li>Detail Design</li>
+                        <li>Engineering Change Management</li>
+                        <li>Technical Publication</li>
+                        <li>Data Migration</li>
+                      
+                    </ul>
+                </div>
+
+                <div class="services-category">
+                    <h3>Analysis & Optimization</h3>
+                    <ul class="services-list">
+                        <li>Finite Element Modeling</li>
+                        <li>Structural Analysis</li>
+                        <li>Computational Fluid Dynamics</li>
+                        <li>Dynamic & Thermal Analysis</li>
+                        <li>Multi Body Dynamics Analysis</li>
+                        <li>Mold Flow Analysis</li>
+                        <li> Fatigue & Durability Analysis</li>
+                        <li> Design for Manufacturability & Cost Optimization</li>
+                           
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="resources" class="py-16 text-center">
+            <div class="container">
+                <h2>CAD Resources Available For</h2>
+                <ul class="resource-list ">
+                    <li>CATIA</li>
+                    <li>Solidworks</li>
+                    <li>Solid Edge</li>
+                    <li>Inventor</li>
+                    <li>CREO</li>
+                    <li>UG-NX</li>
+                    <li>AutoCAD</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contact" class="py-16 text-center">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>Reach out to us for world-class engineering and technology solutions.</p>
+                <div class="contact-info">
+                    <div class="branch-info">
+                        <h3>Nashik Branch</h3>
+                        <p>Flat No. 3, Moraya Appt., Ambad Link Road,</p>
+                        <p>Ambika Nagar, Kamathwada, Nashik - 422 010</p>
+                        <p>Maharashtra</p>
+                        <p>Ph: <a href="tel:+918010796352">+91-8010796352</a></p>
+                        <p>Email: <a href="mailto:info@sylksolutions.in">info@sylksolutions.in</a></p>
+                    </div>
+                    <div class="branch-info">
+                        <h3>Pune Branch</h3>
+                        <p>Office No.B-07 Sant Tukaram Maharaj Vyapar Sankul,</p>
+                        <p>Near Savali Hotel, Opposite Nigdi Bus Stop.</p>
+                        <p>Nigdi, Pune - 411044. Maharashtra</p>
+                        <p>Ph: <a href="tel:+918407937494">+91-8407937494</a></p>
+                        <p>Email: <a href="mailto:info@sylksolutions.in">info@sylksolutions.in</a></p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h2>Send Us a Message</h2>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 SYLK Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+      // Smooth scrolling for navigation links (existing and mobile)
+document.querySelectorAll('nav a, .hero-button, .header-button').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - document.querySelector('header').offsetHeight,
+                behavior: 'smooth'
+            });
+        }
+
+        // Close mobile menu after clicking a link
+        mainNav.classList.remove('open');
+    });
+});
+
+// Mobile menu toggle functionality
+const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+const mainNav = document.getElementById('main-nav');
+
+if (mobileNavToggle && mainNav) {
+    mobileNavToggle.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent the document click from immediately closing the menu
+        mainNav.classList.toggle('open');
+    });
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    // If menu is open and click is outside both menu and toggle
+    if (
+        mainNav.classList.contains('open') &&
+        !mainNav.contains(e.target) &&
+        !mobileNavToggle.contains(e.target)
+    ) {
+        mainNav.classList.remove('open');
+    }
+});
+
+    </script>
+</body>
+</html>
